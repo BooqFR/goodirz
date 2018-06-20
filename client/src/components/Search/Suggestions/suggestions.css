@@ -1,0 +1,27 @@
+.suggestion {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    text-align: left;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.suggestion--name {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 140px);
+    padding-left: 15px;
+}
+
+.suggestion--image {
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+.suggestion--image img {
+    border-radius: 100%;
+    width: 75px;
+    height: 75px;
+}

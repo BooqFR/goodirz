@@ -27,7 +27,15 @@
   to { transform: rotate(360deg); }
 }
 
-
 div, button {
   margin: 10px;
+}
+
+* {
+  font-family: ProductSans;
+}
+
+@font-face {
+  font-family: 'ProductSans';
+  src: local('ProductSans'), url(./assets/fonts/Product-Sans-Regular.ttf) format('truetype');
 }

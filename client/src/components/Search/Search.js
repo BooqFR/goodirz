@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SpotifyWebApi from 'spotify-web-api-js';
-import Suggestions from './Suggestions'
-import './search.sass';
+import Suggestions from './Suggestions/Suggestions'
+import './search.css';
 
 
 const spotifyApi = new SpotifyWebApi();
@@ -13,12 +13,20 @@ class Search extends Component {
   }
 
   searchArtists = () => {
-    spotifyApi.searchArtists(this.search.value+'*')
+    if (this.search.value) {
+      spotifyApi.searchArtists(this.search.value+'*')
       .then((response) => {
         this.setState({
           results: response.artists.items
         })
       })
+    }
+    else {
+      this.setState({
+        results: []
+      })
+    }
+
   }
 
   render() {
@@ -28,7 +36,7 @@ class Search extends Component {
           placeholder="Search for..."
           ref={input => this.search = input}
           onChange={this.searchArtists}
-          class="search"
+          className="search"
         />
         <Suggestions results={this.state.results}/>
       </form>
