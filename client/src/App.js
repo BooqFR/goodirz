@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Search from './components/Search/Search';
+import mainLogo from './goodirz-logo.svg';
 import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
 
@@ -34,8 +35,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <a href='http://localhost:8888' > Login to Spotify </a>
-        <Search />
+        <img src={mainLogo} alt="logo" width="250"/>
+        <div>
+          <a href='http://localhost:8888' > Login to Spotify </a>
+        </div>
+        <div>
+          <Search />
+        </div>
       </div>
     );
   }

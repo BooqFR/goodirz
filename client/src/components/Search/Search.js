@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import SpotifyWebApi from 'spotify-web-api-js';
 import Suggestions from './Suggestions'
+import './search.sass';
+
 
 const spotifyApi = new SpotifyWebApi();
 
@@ -9,7 +11,7 @@ class Search extends Component {
   state = {
     results: []
   }
-  
+
   searchArtists = () => {
     spotifyApi.searchArtists(this.search.value+'*')
       .then((response) => {
@@ -26,8 +28,9 @@ class Search extends Component {
           placeholder="Search for..."
           ref={input => this.search = input}
           onChange={this.searchArtists}
+          class="search"
         />
-        <Suggestions results={this.state.results} />
+        <Suggestions results={this.state.results}/>
       </form>
     )
   }
